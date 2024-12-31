@@ -1,0 +1,166 @@
+/* Home.css */
+
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Home container */
+.home {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header styling */
+header {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:20px 100px;
+    background-color:darkgray;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index:99;
+  
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+
+.navigation button:hover {
+  background-color: white;
+  color: #333;
+}
+.navigation button{
+    width: 130px;
+    height: 50px;
+    background:transparent;
+    border:2px solid #b3a7a7;
+    outline:none;
+    border-radius: 6px;
+    cursor:pointer;
+    font-size:1.3em;
+    color:#fff;
+    font-weight:500;
+    margin-left:40px;
+    transition: .5s;
+    background: transparent;
+    color:#162938;
+}
+
+
+
+.logo{
+    font-size:2em;
+    color: #fff;
+    user-select: none;
+
+}
+
+/* Main content area */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:transparent;
+  padding: 50px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 36px;
+  color: #333;
+}
+
+/* Sidebar styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 200px;
+    height: 150%;
+    background-color: #333;
+    color: white;
+    transition: left 0.3s ease;
+    padding: 30px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .sidebar.open {
+    left: 0;
+  }
+  
+  .sidebar .close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 70px;
+    cursor: pointer;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin: 15px 0;
+  }
+  
+  /* Sidebar button styling */
+.sidebar ul li button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%; /* Make the button occupy the full width */
+    text-align: left; /* Align text to the left */
+    padding: 10px 15px; /* Add padding for better appearance */
+}
+
+/* On hover, apply the underline effect */
+.sidebar ul li button:hover {
+    text-decoration: underline;
+    background-color: #444; /* Optional: add a background on hover for better UX */
+}
+
+  /* Header styles */
+  .menu-icon {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  
+
+
+.fixed-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: darkgray;
+    color: #333;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+  }

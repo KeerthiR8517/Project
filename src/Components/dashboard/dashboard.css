@@ -1,0 +1,14 @@
+.dashboard main h1 {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:transparent;
+  padding: 50px;
+  text-align: center;
+  }
+  .dashboard main p {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    max-width: 800px;
+  }

@@ -1,0 +1,137 @@
+.container{
+    display:flex;
+    flex-direction:column;
+    margin:auto;
+    margin-top: 200px;
+    /* margin-bottom: 100px; */
+    width:500px;
+    background:transparent;
+    border:2px solid rgba(255,255,255,.5);
+    backdrop-filter:blur(20px);
+    padding-bottom: 30px;
+    border-radius: 8px;
+
+}
+
+.header{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:9px;
+    width:100%;
+    margin-top:30px;
+
+}
+.text{
+    color:#3c009d;
+    font-size:30px;
+    font-weight:700;
+
+}
+.underline{
+    width:68px;
+    height:4px;
+    background-color: #3c009d;
+    border-radius: 3px;
+}
+
+
+.inputs{
+    margin-top:55px;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+
+}
+.input{
+    display:flex;
+    align-items:center;
+    margin:auto;
+    width:400px;
+    height:60px;
+    background:#eaeaea;
+    border-radius: 6px;
+}
+.input img{
+    margin:0px 40px;
+
+}
+
+.input input{
+    height:50px;
+    width:400px;
+    background:transparent;
+    border:none;
+    outline:none;
+    color:#797979;
+    font-size:19px;
+}
+.forgot-password{
+    padding-left:62px;
+    margin-top:27px;
+    color:black;
+    font-size:18px;
+}
+.forgot-password span{
+    color:#b4001e;
+    cursor:pointer;
+}
+
+.submit-container{
+    display: flex;
+    gap:30px;
+    margin:60px auto;
+
+
+}
+.submit{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:200px;
+    height:55px;
+    color:#fff;
+    background-color: #4c00b4;
+    border-radius:10px;
+    font-size:19px;
+    font-weight:700;
+    cursor:pointer;
+
+}
+.gray{
+    background:#EAEAEA;
+    color:#676767;
+
+}
+.navigation-links{
+ text-align: center;
+}
+.navigation-links span{
+    color:#b4001e;
+    cursor:pointer;
+    font-size:20px;
+   
+}
+.error-message {
+    color: #b4001e;
+    font-size: 15px; /* Smaller font size to fit well under input fields */
+    margin-top: -25px;
+    display: flex;
+    align-items: center;
+    
+    margin-left: 85px; /* Adjust this value to align with the input field's text */
+}
+.input.error {
+    border: 1px solid#b4001e; /* Red border for the entire input block */
+}
+
+.link{
+    background:transparent;
+
+}
+
+  
+
+  
+
+  
