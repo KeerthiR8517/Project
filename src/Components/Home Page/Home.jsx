@@ -32,7 +32,7 @@ const Home = () => {
         </button>
         <ul>
          <li><button onClick={() => navigate('/dashboard')}>Dashboard</button></li>
-         <li><button onClick={() => navigate('/profile')}>Go to Profile</button></li>
+         <li><button onClick={() => navigate('/profile')}>Profile</button></li>
 
           <li><button onClick={() => {}}>Settings </button></li>
           <li><button onClick={() => {}}>Logout</button></li>
