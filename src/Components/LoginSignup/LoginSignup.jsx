@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';  // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 import './LoginSignup.css';
 
 import user_icon from '../Assets/person.png';
 import email_icon from '../Assets/email.png';
 import password_icon from '../Assets/password.png';
+import eye_icon from '../Assets/eye-off.png'; // Import eye icon
+import eye_off_icon from '../Assets/eye-off.png'; // Import eye-off icon
 
 const LoginSignup = () => {
   const [action, setAction] = useState("Login");
-
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -29,7 +30,11 @@ const LoginSignup = () => {
     newPassword: '', 
   });
 
-  const navigate = useNavigate();  // Initialize the useNavigate hook
+  const [passwordVisible, setPasswordVisible] = useState(false); // State for password visibility
+  const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false); // State for confirm password visibility
+  const [newPasswordVisible, setNewPasswordVisible] = useState(false); // State for new password visibility
+
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -51,16 +56,16 @@ const LoginSignup = () => {
     if (formData.email && !emailPattern.test(formData.email)) {
       formErrors.email = 'Invalid email format';
     }
-  
+
     const phonePattern = /^[0-9]{10}$/;
     if (formData.phoneNumber && !phonePattern.test(formData.phoneNumber)) {
       formErrors.phoneNumber = 'Phone number must be 10 digits';
     }
-  
+
     if (formData.password && (formData.password.length < 6 || formData.password.length > 20)) {
       formErrors.password = 'Password must be between 6 and 20 characters';
     }
-  
+
     return formErrors;
   };
 
@@ -119,7 +124,7 @@ const LoginSignup = () => {
 
       if (response.ok) {
         alert('Login successful!');
-        navigate('/Home');  // Navigate to the Home page on successful login
+        navigate('/Home');
       } else {
         alert('Invalid credentials');
       }
@@ -158,6 +163,18 @@ const LoginSignup = () => {
       console.error('Error resetting password:', error);
       alert('An error occurred during password reset');
     }
+  };
+
+  const togglePasswordVisibility = () => {
+    setPasswordVisible(!passwordVisible);
+  };
+
+  const toggleConfirmPasswordVisibility = () => {
+    setConfirmPasswordVisible(!confirmPasswordVisible);
+  };
+
+  const toggleNewPasswordVisibility = () => {
+    setNewPasswordVisible(!newPasswordVisible);
   };
 
   return (
@@ -230,12 +247,18 @@ const LoginSignup = () => {
           <div className={`input ${errors.password ? 'error' : ''}`}>
             <img src={password_icon} alt="Password Icon" />
             <input
-              type="password"
+              type={passwordVisible ? "text" : "password"} // Toggle password visibility
               placeholder='Password *'
               name="password"
               value={formData.password}
               onChange={handleInputChange}
               required
+            />
+            <img
+              src={passwordVisible ? eye_off_icon : eye_icon}
+              alt="Toggle Visibility"
+              className="eye-icon"
+              onClick={togglePasswordVisibility}
             />
           </div>
         )}
@@ -245,12 +268,18 @@ const LoginSignup = () => {
           <div className={`input ${errors.confirmPassword ? 'error' : ''}`}>
             <img src={password_icon} alt="Password Icon" />
             <input
-              type="password"
+              type={confirmPasswordVisible ? "text" : "password"} // Toggle confirm password visibility
               placeholder='Confirm Password *'
               name="confirmPassword"
               value={formData.confirmPassword}
               onChange={handleInputChange}
               required
+            />
+            <img
+              src={confirmPasswordVisible ? eye_off_icon : eye_icon}
+              alt="Toggle Visibility"
+              className="eye-icon"
+              onClick={toggleConfirmPasswordVisibility}
             />
           </div>
         )}
@@ -260,12 +289,18 @@ const LoginSignup = () => {
           <div className={`input ${errors.newPassword ? 'error' : ''}`}>
             <img src={password_icon} alt="Password Icon" />
             <input
-              type="password"
+              type={newPasswordVisible ? "text" : "password"} // Toggle new password visibility
               placeholder='New Password *'
               name="newPassword"
               value={formData.newPassword}
               onChange={handleInputChange}
               required
+            />
+            <img
+              src={newPasswordVisible ? eye_off_icon : eye_icon}
+              alt="Toggle Visibility"
+              className="eye-icon"
+              onClick={toggleNewPasswordVisibility}
             />
           </div>
         )}
@@ -293,13 +328,8 @@ const LoginSignup = () => {
           <div className="link" onClick={() => setAction("Login")}>Back to Login</div>
         )}
       </div>
-      
-     
     </form>
-  
-    
   );
-};
-
+}
 
 export default LoginSignup;

@@ -22,16 +22,20 @@
     margin-top:30px;
 
 }
-.text{
-    color:#3c009d;
-    font-size:30px;
-    font-weight:700;
-
+.text {
+    font-size: 30px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ff9a8b, #ff6a88); /* Gradient colors */
+    -webkit-background-clip: text; /* For WebKit browsers (e.g., Chrome, Safari) */
+    background-clip: text; /* Standard property for future-proofing */
+    -webkit-text-fill-color: transparent; /* Makes text transparent to show gradient */
 }
+
+
 .underline{
     width:68px;
     height:4px;
-    background-color: #3c009d;
+    background: linear-gradient(135deg, #ff9a8b, #ff6a88);
     border-radius: 3px;
 }
 
@@ -91,13 +95,22 @@
     width:200px;
     height:55px;
     color:#fff;
-    background-color: #4c00b4;
+    background: linear-gradient(135deg, #ff9a8b, #ff6a88);
     border-radius:10px;
     font-size:19px;
     font-weight:700;
     cursor:pointer;
 
 }
+
+.submit:hover {
+    background: linear-gradient(135deg, #ff6a88, #ff9a8b);
+    transform: translateY(-4px);
+  }
+  
+  .submit:active {
+    transform: translateY(2px);
+  }
 .gray{
     background:#EAEAEA;
     color:#676767;
@@ -129,6 +142,7 @@
     background:transparent;
 
 }
+
 
   
 
